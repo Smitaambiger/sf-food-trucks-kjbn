@@ -6,8 +6,8 @@ A small backend service (with a minimal map front-end) that answers one question
 Built for the KJBN Labs Python Backend Developer coding challenge — **Back-end track**,
 project: **Food Trucks**.
 
-Live demo: `<ADD_YOUR_DEPLOYED_URL_HERE>`
-Interactive API docs (Swagger): `<ADD_YOUR_DEPLOYED_URL_HERE>/docs`
+Live demo: https://kjbn-sf-food-trucks.onrender.com
+Interactive API docs (Swagger): https://kjbn-sf-food-trucks.onrender.com/docs
 
 ---
 
@@ -193,7 +193,10 @@ docker run -p 8000:8000 --env-file .env sf-food-trucks
 
 ## Deployment
 
-Deployed on `<Render / Railway / Fly.io - fill in>`: `<ADD_YOUR_DEPLOYED_URL_HERE>`
+Deployed on [Render](https://render.com): https://kjbn-sf-food-trucks.onrender.com
+
+Note: this runs on Render's free tier, which spins the instance down after inactivity — the first
+request after a period of no traffic can take 30-50s to wake it back up. Subsequent requests are fast.
 
 `render.yaml` in the repo root defines a ready-to-use [Render](https://render.com) blueprint:
 
