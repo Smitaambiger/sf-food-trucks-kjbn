@@ -1,5 +1,5 @@
 "use strict";
-const DEFAULT_CENTER = [37.7749, -122.4194]; // San Francisco
+const DEFAULT_CENTER = [37.7749, -122.4194];
 const map = L.map("map").setView(DEFAULT_CENTER, 13);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "&copy; OpenStreetMap contributors",

@@ -13,16 +13,13 @@ class Settings(BaseSettings):
     environment: str = Field(default="development")
     log_level: str = Field(default="INFO")
 
-    # DataSF (Socrata) Mobile Food Facility Permit dataset
     datasf_base_url: str = Field(default="https://data.sfgov.org/resource/rqzj-sfat.json")
     datasf_app_token: str | None = Field(default=None)
     datasf_timeout_seconds: float = Field(default=8.0)
     datasf_max_retries: int = Field(default=3)
 
-    # In-memory cache TTL for the truck dataset
     cache_ttl_seconds: int = Field(default=900)
 
-    # Search defaults
     default_radius_km: float = Field(default=1.0)
     max_radius_km: float = Field(default=10.0)
     max_results: int = Field(default=50)
