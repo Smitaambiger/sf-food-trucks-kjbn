@@ -18,8 +18,9 @@ Interactive API docs (Swagger): `<ADD_YOUR_DEPLOYED_URL_HERE>/docs`
   from DataSF (Socrata Open Data API), keeping only active permits (`APPROVED`, `ISSUED`, `REQUESTED`).
 - Computes real distance (haversine formula) from the query point to every truck, filters by radius,
   optionally filters by a food-type keyword, and returns the closest matches sorted by distance.
-- A single-page front-end (Leaflet map) lets you click anywhere on the map — or use your browser's
-  geolocation — to see nearby trucks as pins, with a matching list/sidebar.
+- A single-page front-end (Leaflet map), written in **TypeScript** and compiled to plain JS for the
+  browser, lets you click anywhere on the map — or use your browser's geolocation — to see nearby
+  trucks as pins, with a matching list/sidebar.
 
 ## Why this project / track
 
@@ -51,7 +52,10 @@ app/
     truck_service.py          # Business logic: caching, filtering, distance sort
   utils/
     geo.py                    # Haversine distance + lat/lon validation (pure functions, easy to unit test)
-  static/                     # Minimal front-end: index.html + app.js (Leaflet) + styles.css
+  static/                     # index.html + styles.css + app.js (compiled output, do not edit by hand)
+frontend/
+  app.ts                      # Front-end source, written in TypeScript, compiles to app/static/app.js
+  leaflet.d.ts                 # Minimal ambient types for the Leaflet CDN global
 tests/                        # pytest suite mirroring the app layers
 ```
 
@@ -141,6 +145,15 @@ uvicorn app.main:app --reload
 ```
 
 Then open `http://localhost:8000` for the map UI, or `http://localhost:8000/docs` for the API docs.
+
+The compiled front-end (`app/static/app.js`) is committed, so the above is enough to run the app —
+you do **not** need Node installed just to view it. Node is only needed if you're editing the
+front-end source:
+
+```bash
+npm install
+npm run build     # compiles frontend/app.ts -> app/static/app.js
+```
 
 ### Configuration
 

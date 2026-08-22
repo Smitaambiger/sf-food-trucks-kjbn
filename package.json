@@ -1,0 +1,13 @@
+{
+  "name": "sf-food-trucks-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "TypeScript source for the SF Food Trucks Nearby front-end (compiles to app/static/app.js).",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
