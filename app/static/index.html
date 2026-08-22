@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SF Food Trucks Nearby</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>SF Food Trucks Nearby</h1>
+    <div class="controls">
+      <button id="locate-btn">Use my location</button>
+      <label>
+        Radius (km)
+        <input id="radius-input" type="number" min="0.1" max="10" step="0.1" value="1" />
+      </label>
+      <label>
+        Food type
+        <input id="food-type-input" type="text" placeholder="e.g. tacos" />
+      </label>
+      <button id="search-btn">Search</button>
+    </div>
+    <p id="status-line" class="status"></p>
+  </header>
+
+  <main class="layout">
+    <div id="map"></div>
+    <aside id="results">
+      <p class="empty-hint">Click "Use my location" (or click the map) to find nearby trucks.</p>
+    </aside>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
