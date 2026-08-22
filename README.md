@@ -201,11 +201,15 @@ Deploy steps (Render, free tier):
 
 ## Developer
 
-**Name:** `<YOUR NAME HERE>`
-**Experience:** `<e.g. "X years building REST APIs with Python/FastAPI/Django; comfortable with Docker, Postgres, and cloud deployment.">`
-**Contact:** `<your email>`
+**Name:** Smita D Ambiger
+**Experience:** 2.5 years as a Backend Engineer (Accenture) building REST APIs and backend systems
+with Python, FastAPI, and Django REST Framework — including Pydantic-based validation, structured
+logging, PostgreSQL query optimization, and CI/CD pipelines on GCP. Also an active open-source
+contributor to Apache Burr (Apache Software Foundation), with merged PRs adding FastAPI integration
+utilities and AST-based static validation.
+**Contact:** smitaambiger11@gmail.com | +91 96110 13135
 
-*Note on tooling: I used AI-assisted tooling (Claude) as a pair-programming aid while building this —
-for scaffolding, boilerplate, and reviewing my logic — the same way I'd use an IDE's Copilot. All
-architectural decisions, the dataset/track choice, and the final code are mine and I can walk through
-any part of it in the demo.*
+*Note on tooling: AI-assisted tooling (Claude) was used as a pair-programming aid while building this —
+for scaffolding, boilerplate, and reviewing logic — the same way I use Claude/Cursor in my day-to-day
+work. All architectural decisions, the dataset/track choice, and the final code are mine, reviewed and
+tested before submission, and I can walk through any part of it in the demo.*
