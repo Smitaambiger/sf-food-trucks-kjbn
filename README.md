@@ -182,13 +182,23 @@ docker run -p 8000:8000 --env-file .env sf-food-trucks
 
 Deployed on `<Render / Railway / Fly.io - fill in>`: `<ADD_YOUR_DEPLOYED_URL_HERE>`
 
-Deploy steps (Render, free tier):
+`render.yaml` in the repo root defines a ready-to-use [Render](https://render.com) blueprint:
+
 1. Push this repo to GitHub.
-2. On Render: New -> Web Service -> connect the repo.
-3. Build command: `pip install -r requirements.txt`
-4. Start command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
-5. Add environment variables from `.env.example` (all optional/defaulted except you may want to set
-   `DATASF_APP_TOKEN`).
+2. On Render: New -> Blueprint -> connect the repo (Render will pick up `render.yaml` automatically
+   and build the included `Dockerfile`).
+3. Add environment variables from `.env.example` if you want to override any defaults (all are
+   optional; you may want to set `DATASF_APP_TOKEN`).
+4. Render will use `healthCheckPath: /health` to confirm the service is up.
+
+(Without the blueprint: New -> Web Service -> connect the repo -> build command
+`pip install -r requirements.txt` -> start command `uvicorn app.main:app --host 0.0.0.0 --port $PORT`.)
+
+## Manual API testing
+
+`postman_collection.json` has ready-made requests for `/health`, a nearby search, a food-type-filtered
+search, and an invalid-input case (expects `422`). Import it into Postman/Insomnia and set the
+`base_url` variable to your local or deployed URL.
 
 ## Possible next steps (out of scope for this challenge)
 
