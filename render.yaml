@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: kjbn-sf-food-trucks
+    runtime: docker
+    plan: free
+    healthCheckPath: /health

@@ -1,0 +1,66 @@
+{
+  "info": {
+    "name": "KJBN Labs - SF Food Trucks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {"key": "base_url", "value": "http://127.0.0.1:8000"}
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/health"
+      }
+    },
+    {
+      "name": "Nearby Trucks - Downtown SF",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/api/v1/trucks/nearby?lat=37.7749&lon=-122.4194&radius_km=2",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "trucks", "nearby"],
+          "query": [
+            {"key": "lat", "value": "37.7749"},
+            {"key": "lon", "value": "-122.4194"},
+            {"key": "radius_km", "value": "2"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Nearby Trucks - Taco Filter",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/api/v1/trucks/nearby?lat=37.7749&lon=-122.4194&radius_km=5&food_type=tacos",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "trucks", "nearby"],
+          "query": [
+            {"key": "lat", "value": "37.7749"},
+            {"key": "lon", "value": "-122.4194"},
+            {"key": "radius_km", "value": "5"},
+            {"key": "food_type", "value": "tacos"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Nearby Trucks - Invalid Latitude (expect 422)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/api/v1/trucks/nearby?lat=999&lon=-122.4194",
+          "host": ["{{base_url}}"],
+          "path": ["api", "v1", "trucks", "nearby"],
+          "query": [
+            {"key": "lat", "value": "999"},
+            {"key": "lon", "value": "-122.4194"}
+          ]
+        }
+      }
+    }
+  ]
+}
