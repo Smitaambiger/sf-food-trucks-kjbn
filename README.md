@@ -3,7 +3,7 @@
 A small backend service (with a minimal map front-end) that answers one question:
 **"What food trucks are operating near me right now?"**
 
-Built for the KJBN Labs Python Backend Developer coding challenge — **Back-end track**,
+Built for the KJBN Labs Python Backend Developer coding challenge - **Back-end track**,
 project: **Food Trucks**.
 
 Live demo: https://kjbn-sf-food-trucks.onrender.com
@@ -19,7 +19,7 @@ Interactive API docs (Swagger): https://kjbn-sf-food-trucks.onrender.com/docs
 - Computes real distance (haversine formula) from the query point to every truck, filters by radius,
   optionally filters by a food-type keyword, and returns the closest matches sorted by distance.
 - A single-page front-end (Leaflet map), written in **TypeScript** and compiled to plain JS for the
-  browser, lets you click anywhere on the map — or use your browser's geolocation — to see nearby
+  browser, lets you click anywhere on the map - or use your browser's geolocation — to see nearby
   trucks as pins, with a matching list/sidebar.
 
 ## Why this project / track
@@ -146,7 +146,7 @@ uvicorn app.main:app --reload
 
 Then open `http://localhost:8000` for the map UI, or `http://localhost:8000/docs` for the API docs.
 
-The compiled front-end (`app/static/app.js`) is committed, so the above is enough to run the app —
+The compiled front-end (`app/static/app.js`) is committed, so the above is enough to run the app -
 you do **not** need Node installed just to view it. Node is only needed if you're editing the
 front-end source:
 
@@ -157,7 +157,7 @@ npm run build     # compiles frontend/app.ts -> app/static/app.js
 
 ### Configuration
 
-All configuration is via environment variables (see `.env.example`) — nothing is hardcoded.
+All configuration is via environment variables (see `.env.example`) - nothing is hardcoded.
 Notably `DATASF_APP_TOKEN` is optional: the dataset is public and works without one at low volume,
 but a free token (from [data.sfgov.org](https://data.sfgov.org/profile/app_tokens)) avoids
 throttling under heavier use.
@@ -170,10 +170,10 @@ ruff check .        # lint
 ```
 
 Tests are split by layer:
-- `test_geo.py` — pure distance/validation math, no mocking needed.
-- `test_truck_service.py` — business logic (caching, filtering, sorting) with the DataSF client mocked.
-- `test_datasf_client.py` — HTTP retry/timeout/error handling, using `respx` to mock the network layer.
-- `test_api_trucks.py` — FastAPI routes, using `TestClient` with the service layer mocked via
+- `test_geo.py` - pure distance/validation math, no mocking needed.
+- `test_truck_service.py` - business logic (caching, filtering, sorting) with the DataSF client mocked.
+- `test_datasf_client.py` - HTTP retry/timeout/error handling, using `respx` to mock the network layer.
+- `test_api_trucks.py` - FastAPI routes, using `TestClient` with the service layer mocked via
   dependency override.
 
 ## Logging & error handling
@@ -229,13 +229,13 @@ search, and an invalid-input case (expects `422`). Import it into Postman/Insomn
 
 **Name:** Smita D Ambiger
 **Experience:** 2.5 years as a Backend Engineer (Accenture) building REST APIs and backend systems
-with Python, FastAPI, and Django REST Framework — including Pydantic-based validation, structured
+with Python, FastAPI, and Django REST Framework - including Pydantic-based validation, structured
 logging, PostgreSQL query optimization, and CI/CD pipelines on GCP. Also an active open-source
 contributor to Apache Burr (Apache Software Foundation), with merged PRs adding FastAPI integration
 utilities and AST-based static validation.
 **Contact:** smitaambiger11@gmail.com | +91 96110 13135
 
-*Note on tooling: AI-assisted tooling (Claude) was used as a pair-programming aid while building this —
-for scaffolding, boilerplate, and reviewing logic — the same way I use Claude/Cursor in my day-to-day
+*Note on tooling: AI-assisted tooling (Claude) was used as a pair-programming aid while building this -
+for scaffolding, boilerplate, and reviewing logic - the same way I use Claude/Cursor in my day-to-day
 work. All architectural decisions, the dataset/track choice, and the final code are mine, reviewed and
 tested before submission, and I can walk through any part of it in the demo.*
