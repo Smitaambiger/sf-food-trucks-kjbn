@@ -195,7 +195,7 @@ docker run -p 8000:8000 --env-file .env sf-food-trucks
 
 Deployed on [Render](https://render.com): https://kjbn-sf-food-trucks.onrender.com
 
-Note: this runs on Render's free tier, which spins the instance down after inactivity — the first
+Note: this runs on Render's free tier, which spins the instance down after inactivity - the first
 request after a period of no traffic can take 30-50s to wake it back up. Subsequent requests are fast.
 
 `render.yaml` in the repo root defines a ready-to-use [Render](https://render.com) blueprint:
