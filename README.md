@@ -19,7 +19,7 @@ Interactive API docs (Swagger): https://kjbn-sf-food-trucks.onrender.com/docs
 - Computes real distance (haversine formula) from the query point to every truck, filters by radius,
   optionally filters by a food-type keyword, and returns the closest matches sorted by distance.
 - A single-page front-end (Leaflet map), written in **TypeScript** and compiled to plain JS for the
-  browser, lets you click anywhere on the map - or use your browser's geolocation — to see nearby
+  browser, lets you click anywhere on the map - or use your browser's geolocation - to see nearby
   trucks as pins, with a matching list/sidebar.
 
 ## Why this project / track
